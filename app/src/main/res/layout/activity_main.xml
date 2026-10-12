@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Nagłówek aplikacji z tytułem i numerem PESEL -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1F3A8A"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Kalkulator Podróży"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Autor: 00000000000"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Dystans w km -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dystans w km"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etDistance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dystans w km"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Zużycie paliwa na 100 km -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zużycie paliwa na 100km"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etFuelConsumption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Zużycie paliwa na 100km"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Wybór paliwa (RadioGroup) -->
+    <RadioGroup
+        android:id="@+id/rgFuelType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp">
+
+        <RadioButton
+            android:id="@+id/rbGasoline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Benzyna (6.50 zł)"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rbDiesel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diesel (6.70 zł)" />
+
+        <RadioButton
+            android:id="@+id/rbLpg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LPG (3.10 zł)" />
+    </RadioGroup>
+
+    <!-- Liczba pasażerów -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liczba pasażerów"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/etPassengers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Liczba pasażerów"
+            android:text="1"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:text="+" />
+    </LinearLayout>
+
+    <!-- Przycisk Oblicz -->
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OBLICZ KOSZT"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Wynik -->
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</LinearLayout>
